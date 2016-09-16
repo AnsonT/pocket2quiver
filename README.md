@@ -25,3 +25,12 @@ Options:
   --consumer-key=<key>     Pocket consumer key    
   --access-token=<token>   Pocket access token
 ```
+This is work in progress:
+- Only compiled in Python 3.5.2
+- No setup script. Run `pip install -r /path/to/requirements.txt`
+
+
+Quiver export based on:
+https://gist.github.com/kspeeckaert/934a8308a4ec09e2e0756a313a915622
+
+
