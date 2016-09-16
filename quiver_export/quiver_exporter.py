@@ -17,6 +17,7 @@ from .summarize_content import get_summary
 def localize_images(resource_path, img_tags):
 
     for img_tag in img_tags:
+      try:
         url = img_tag['src']
         r = requests.get(url)
         
@@ -31,6 +32,8 @@ def localize_images(resource_path, img_tags):
         
         # Convert the original URL to a Quiver URL
         img_tag['src'] = 'quiver-image-url/{}'.format(img_name)
+      except Exception as e:
+        print("Failed to localize {}".format(url))
 
 
 # Write content.json

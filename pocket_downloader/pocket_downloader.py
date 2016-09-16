@@ -35,7 +35,7 @@ class PocketDownloader(object):
     since = self.index.downloaded_since()
     offset = 0
     count = 100
-
+    resp_since = since
     p = Pocket(consumer_key = self.consumer_key, access_token = self.access_token)
     total = 0
     bookmarks = []
@@ -46,7 +46,7 @@ class PocketDownloader(object):
       total += num_bookmarks
       if not num_bookmarks:
         break
-
+      resp_since = resp['since']
       bookmarks = map(
         self._pocket_to_bookmark,
         filter(
@@ -57,7 +57,8 @@ class PocketDownloader(object):
       for bookmark in bookmarks:
         self.index.downloaded(bookmark) 
       print("Downloaded: ", total)
-    self.index.set_downloaded_since(datetime.utcnow())
+    # Pocket API appears to use Pacific time for timestamp.
+    self.index.set_downloaded_since(resp_since)
 
   def export(self):
     for bookmark, note_id in self.index.unprocessed():

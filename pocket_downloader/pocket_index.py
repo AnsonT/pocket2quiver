@@ -69,6 +69,6 @@ class PocketIndex(object):
     return self.jkv.get('downloaded_since', 0)
   
   def set_downloaded_since(self, since):
-    self.jkv['downloaded_since'] = since.timestamp()
+    self.jkv['downloaded_since'] = float(since)
 
     
