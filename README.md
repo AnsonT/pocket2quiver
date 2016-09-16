@@ -6,6 +6,7 @@ Bookmarked content is downloaded, summarized by readability and converted to mar
 * First run will setup Pocket authentication and Quiver notebook
 * Subsequent runs will get Pocket updates, and contain unprocessed exports 
 
+```
 Usage:
   pocket2quiver.py [--notebook=<notebook>] [--library=<library>] [--consumer-key=<key>] [--access-token=<token>] [-a]
   pocket2quiver.py -y [--all]
@@ -23,3 +24,4 @@ Options:
   -l --library=<library>   Quiver library
   --consumer-key=<key>     Pocket consumer key    
   --access-token=<token>   Pocket access token
+```
