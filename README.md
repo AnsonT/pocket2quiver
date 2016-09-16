@@ -28,6 +28,7 @@ Options:
 This is work in progress:
 - Only compiled in Python 3.5.2
 - No setup script. Run `pip install -r /path/to/requirements.txt`
+- Progress index stored in ~/.pocket2quiver/ to support incremental updates
 
 
 Quiver export based on:
