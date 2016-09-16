@@ -4,7 +4,6 @@
 Usage:
   pocket2quiver.py [--notebook=<notebook>] [--library=<library>] [--consumer-key=<key>] [--access-token=<token>] [-a]
   pocket2quiver.py -y [--all]
-  pocket2quiver.py -e | --export
   pocket2quiver.py -i | --interactive
   pocket2quiver.py -h | --help
   pocket2quiver.py -v | --version
