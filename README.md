@@ -1,10 +1,10 @@
 # Pocket2Quiver
 
 Download bookmarks from Pocket, and export into Quiver notebook.
-Bookmarked content is downloaded, summarized by readability and converted to markedown.
+Bookmarked content is downloaded, summarized by [readability-lxml](https://github.com/predatell/python-readability-lxml) and converted to markedown [html2text](https://github.com/Alir3z4/html2text/).
 
 * First run will setup Pocket authentication and Quiver notebook
-* Subsequent runs will get Pocket updates, and contain unprocessed exports 
+* Subsequent runs will get Pocket updates, and continue unprocessed exports 
 
 ```
 Usage:
