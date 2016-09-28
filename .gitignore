@@ -1,6 +1,6 @@
 venv*
-build/*
-dist/*
+build
+dist
 .history
 **/__pycache__
 *.egg-info
