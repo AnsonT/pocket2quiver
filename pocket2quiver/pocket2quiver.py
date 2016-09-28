@@ -30,8 +30,8 @@ from peewee import *
 from playhouse.sqlite_ext import SqliteDatabase
 from playhouse.fields import DateTimeField
 from playhouse.kv import JSONKeyStore
-from pocket_downloader import PocketDownloader
-from quiver_export import QuiverExporter
+from .pocket_downloader import PocketDownloader
+from .quiver_export import QuiverExporter
 from os.path import expanduser, exists, join, splitext, abspath, split
 from os import makedirs
 import re
@@ -119,30 +119,34 @@ def prompt_path_if_none(arguments, key, key_desc, force_prompt=False, extension=
   jkv[key] = value
   return value
 
+def main():
+  try:
+    arguments = docopt(__doc__, version='pocket2quiver 0.1')
+
+    force_prompt = arguments['--interactive']
+    library = prompt_path_if_none(arguments, '--library', 'Quiver library', force_prompt=force_prompt, extension=".qvlibrary")
+    notebook = prompt_if_none(arguments, '--notebook', 'Quiver notebook', force_prompt=force_prompt)
+    consumer_key = prompt_if_none(arguments, '--consumer-key', 'Pocket consumer key', force_prompt=force_prompt)
+    access_token = prompt_if_none(arguments, '--access-token', 'Pocket access token', force_prompt=force_prompt)
+
+    print("Quiver Library: {}".format(library))
+    print("Quiver Notebook: {}".format(notebook))  
+
+
+    #if not prompt_yn('Download (Y/n): '):
+    #  exit()
+
+    all = arguments['--all']
+    q = QuiverExporter(library, notebook)
+    p = PocketDownloader(consumer_key, access_token, db_file, q, all=all)
+    print('downloading...')
+    p.download()
+    p.export()
+  except KeyboardInterrupt:
+    print('exit')
+
+    
 
 
 if __name__ == '__main__':
-  arguments = docopt(__doc__, version='pocket2quiver 0.1')
-
-  force_prompt = arguments['--interactive']
-  library = prompt_path_if_none(arguments, '--library', 'Quiver library', force_prompt=force_prompt, extension=".qvlibrary")
-  notebook = prompt_if_none(arguments, '--notebook', 'Quiver notebook', force_prompt=force_prompt)
-  consumer_key = prompt_if_none(arguments, '--consumer-key', 'Pocket consumer key', force_prompt=force_prompt)
-  access_token = prompt_if_none(arguments, '--access-token', 'Pocket access token', force_prompt=force_prompt)
-
-  print("Quiver Library: {}".format(library))
-  print("Quiver Notebook: {}".format(notebook))  
-
-
-  #if not prompt_yn('Download (Y/n): '):
-  #  exit()
-
-  all = arguments['--all']
-  q = QuiverExporter(library, notebook)
-  p = PocketDownloader(consumer_key, access_token, db_file, q, all=all)
-  print('downloading...')
-  p.download()
-  p.export()
-
-  
-
+  main()

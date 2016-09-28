@@ -1,0 +1,3 @@
+[console_scripts]
+pocket2quiver = pocket2quiver.pocket2quiver:main
+
