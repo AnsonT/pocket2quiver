@@ -39,7 +39,8 @@ setup(
       "py-dateutil",
       "PyYAML",
       "readability-lxml",
-      "requests"
+      "requests",
+      "pathlib"
     ],
 
     entry_points = {

@@ -138,7 +138,7 @@ def main():
 
     all = arguments['--all']
     q = QuiverExporter(library, notebook)
-    p = PocketDownloader(consumer_key, access_token, db_file, q, all=all)
+    p = PocketDownloader(str(consumer_key), str(access_token), db_file, q, all=all)
     print('downloading...')
     p.download()
     p.export()

@@ -1,4 +1,6 @@
-venv-p2q
+venv*
+build/*
+dist/*
 .history
 **/__pycache__
 *.egg-info

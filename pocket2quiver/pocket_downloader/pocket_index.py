@@ -9,6 +9,7 @@ from datetime import datetime
 _null_date = datetime.utcfromtimestamp(0)
 db = SqliteDatabase(None)
 
+yaml.SafeLoader.add_constructor("tag:yaml.org,2002:python/unicode", lambda loader, node: node.value)
 
 class Bookmark(Model):
   pocket_id = CharField(unique=True)
