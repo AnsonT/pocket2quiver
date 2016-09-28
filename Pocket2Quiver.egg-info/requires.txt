@@ -1,9 +1,0 @@
-docopt
-html2text
-peewee
-pocket-api
-prompt-toolkit
-py-dateutil
-PyYAML
-readability-lxml
-requests
