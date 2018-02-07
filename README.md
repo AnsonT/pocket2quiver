@@ -8,11 +8,11 @@ Bookmarked content is downloaded, summarized by [readability-lxml](https://githu
 
 ```
 Usage:
-  pocket2quiver.py [--notebook=<notebook>] [--library=<library>] [--consumer-key=<key>] [--access-token=<token>] [-a]
-  pocket2quiver.py -y [--all]
-  pocket2quiver.py -i | --interactive
-  pocket2quiver.py -h | --help
-  pocket2quiver.py -v | --version
+  python -m pocket2quiver [--notebook=<notebook>] [--library=<library>] [--consumer-key=<key>] [--access-token=<token>] [-a]
+  pocket2quiver -y [--all]
+  pocket2quiver -i | --interactive
+  pocket2quiver -h | --help
+  pocket2quiver -v | --version
 
 Options:
   -h --help                Show this screen

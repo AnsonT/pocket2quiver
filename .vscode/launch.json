@@ -1,77 +1,24 @@
 {
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
-    {
-      "name": "Python",
-      "type": "python",
-      "request": "launch",
-      "stopOnEntry": false,
-      "pythonPath": "${config.python.pythonPath}",
-      "program": "${file}",
-      "debugOptions": [
-        "WaitOnAbnormalExit",
-        "WaitOnNormalExit",
-        "RedirectOutput"
-      ]
-    },
-    {
-      "name": "Python Console App",
-      "type": "python",
-      "request": "launch",
-      "stopOnEntry": true,
-      "pythonPath": "${config.python.pythonPath}",
-      "program": "${file}",
-      "externalConsole": true,
-      "debugOptions": [
-        "WaitOnAbnormalExit",
-        "WaitOnNormalExit"
-      ]
-    },
-    {
-      "name": "Django",
-      "type": "python",
-      "request": "launch",
-      "stopOnEntry": true,
-      "pythonPath": "${config.python.pythonPath}",
-      "program": "${workspaceRoot}/manage.py",
-      "args": [
-        "runserver",
-        "--noreload"
-      ],
-      "debugOptions": [
-        "WaitOnAbnormalExit",
-        "WaitOnNormalExit",
-        "RedirectOutput",
-        "DjangoDebugging"
-      ]
-    },
-    {
-      "name": "Watson",
-      "type": "python",
-      "request": "launch",
-      "stopOnEntry": true,
-      "pythonPath": "${config.python.pythonPath}",
-      "program": "${workspaceRoot}/console.py",
-      "args": [
-        "dev",
-        "runserver",
-        "--noreload=True"
-      ],
-      "debugOptions": [
-        "WaitOnAbnormalExit",
-        "WaitOnNormalExit",
-        "RedirectOutput"
-      ]
-    },
-    {
-      "name": "Attach",
-      "type": "python",
-      "request": "attach",
-      "localRoot": "${workspaceRoot}",
-      "remoteRoot": "${workspaceRoot}",
-      "port": 3000,
-      "secret": "my_secret",
-      "host": "localhost"
-    }
-  ]
+  {
+    "name": "Python",
+    "type": "python",
+    "request": "launch",
+    "stopOnEntry": false,
+    "pythonPath": "${config:python.pythonPath}",
+    "program": "${workspaceRoot}/run_p2q.py",
+    "cwd": "${workspaceRoot}",
+    "env": {},
+    "envFile": "${workspaceRoot}/.env",
+    "debugOptions": [
+      "WaitOnAbnormalExit",
+      "WaitOnNormalExit",
+      "RedirectOutput"
+    ]
+  }
+ ]
 }
