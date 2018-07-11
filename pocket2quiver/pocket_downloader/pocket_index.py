@@ -1,8 +1,8 @@
 from peewee import *
 from peewee import Database
 from playhouse.sqlite_ext import SqliteDatabase
-from playhouse.fields import DateTimeField
-from playhouse.kv import JSONKeyStore
+from peewee import DateTimeField
+from playhouse.kv import KeyValue
 import yaml
 from datetime import datetime
 
@@ -26,7 +26,7 @@ class PocketIndex(object):
   def __init__(self, db_path):
     db.init(db_path)
     db.create_tables([Bookmark], safe=True)
-    self.jkv = JSONKeyStore(database=db)
+    self.jkv = KeyValue(database=db)
 
 
   def get_downloaded(self, pocket_id):

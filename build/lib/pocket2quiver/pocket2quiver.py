@@ -25,11 +25,11 @@ Options:
 from docopt import docopt
 from prompt_toolkit.validation import Validator, ValidationError 
 from prompt_toolkit import prompt
-from prompt_toolkit.contrib.completers import PathCompleter
+from prompt_toolkit.completion import PathCompleter
 from peewee import *
 from playhouse.sqlite_ext import SqliteDatabase
-from playhouse.fields import DateTimeField
-from playhouse.kv import JSONKeyStore
+from peewee import DateTimeField
+from playhouse.kv import KeyValue
 from .pocket_downloader import PocketDownloader
 from .quiver_export import QuiverExporter
 from os.path import expanduser, exists, join, splitext, abspath, split
@@ -44,7 +44,7 @@ if not exists(db_path):
 db_file = join(db_path, 'pocket.db')
 db = SqliteDatabase(db_file)
 db.connect()
-jkv = JSONKeyStore(database=db)
+jkv = KeyValue(database=db)
 
 
 class NotEmptyValidator(Validator):
@@ -138,7 +138,7 @@ def main():
 
     all = arguments['--all']
     q = QuiverExporter(library, notebook)
-    p = PocketDownloader(consumer_key, access_token, db_file, q, all=all)
+    p = PocketDownloader(str(consumer_key), str(access_token), db_file, q, all=all)
     print('downloading...')
     p.download()
     p.export()

@@ -8,7 +8,7 @@ setup(
     name="Pocket2Quiver",
 
     # Version number (initial):
-    version="0.1.0",
+    version="0.2.0",
 
     # Application author details:
     author="Anson Tsao",
@@ -21,7 +21,7 @@ setup(
     include_package_data=True,
 
     # Details
-    url="http://pypi.python.org/pypi/Pocket2Quiver_v010/",
+    url="http://pypi.python.org/pypi/Pocket2Quiver_v020/",
 
     #
     license="LICENSE",

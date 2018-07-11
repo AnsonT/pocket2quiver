@@ -67,7 +67,8 @@ class PocketDownloader(object):
         note_id = self.exporter.export(bookmark)
         self.index.processed(bookmark, note_id)
       except Exception as e:
-        print("\nExport failed {}".format(bookmark['url']))
+        #print("\nExport failed {}".format(bookmark['url']))
+        print("\nExport failed {}".format(bookmark))
         
       
 

@@ -1,9 +1,14 @@
+from __future__ import print_function
 import json
 import uuid
 from os import path, mkdir
 
 from pathlib import Path
-from urllib.parse import urlparse
+try:
+  from urllib.parse import urlparse
+except ImportError:
+  from urlparse import urlparse
+     
 from datetime import datetime
 
 import html2text
@@ -19,7 +24,11 @@ def localize_images(resource_path, img_tags):
     for img_tag in img_tags:
       try:
         url = img_tag['src']
-        r = requests.get(url)
+        headers = {
+          'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'
+        }
+
+        r = requests.get(url, headers=headers, timeout=5)
         
         # Define the extension and the new filename
         img_ext = Path(urlparse(url).path).suffix

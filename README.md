@@ -37,3 +37,5 @@ Quiver export based on:
 https://gist.github.com/kspeeckaert/934a8308a4ec09e2e0756a313a915622
 
 
+Changes:
+- 2018-07-11 - updated to latest peewee and prompt_toolkit
