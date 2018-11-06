@@ -38,4 +38,5 @@ https://gist.github.com/kspeeckaert/934a8308a4ec09e2e0756a313a915622
 
 
 Changes:
+- 2018-11-06 - updated to requests 2.20.0 to mitigate security vulnerability
 - 2018-07-11 - updated to latest peewee and prompt_toolkit
