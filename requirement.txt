@@ -14,7 +14,7 @@ py-dateutil==2.2
 PyYAML==4.2b4
 readability-lxml==0.7
 regex==2016.8.27
-requests==2.19.1
+requests==2.20.0
 six==1.11.0
 Unidecode==0.4.19
 urllib3==1.23
