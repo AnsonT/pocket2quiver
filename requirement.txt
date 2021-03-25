@@ -11,7 +11,7 @@ peewee==3.5.2
 pocket-api==0.1.5
 prompt-toolkit==2.0.3
 py-dateutil==2.2
-PyYAML==4.2b4
+PyYAML==5.4
 readability-lxml==0.7
 regex==2016.8.27
 requests==2.20.0
